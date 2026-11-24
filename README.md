@@ -5,19 +5,21 @@ A fully validated, end-to-end computer vision platform leveraging the state-of-t
 ---
 
 ## 🚀 Key Features & Capabilities
-* **Full YOLO Support:** Object Detection, Instance Segmentation, Pose Estimation, Oriented Bounding Boxes (OBB), and Semantic Segmentation.
-* **Streamlit Web UI:** Upload videos, choose custom YOLO weights, configure confidence parameters, and visualize real-time predictions in your browser.
-* **Ultralytics Solutions:** Integrated pipelines for Object Counting, Heatmaps, Speed Estimation, Object Cropper/Blurrer, and Queue Management.
-* **Multi-Format Exports:** Export trained models to ONNX, TorchScript, OpenVINO, CoreML, and more.
+
+- **Full YOLO Support:** Object Detection, Instance Segmentation, Pose Estimation, Oriented Bounding Boxes (OBB), and Semantic Segmentation.
+- **Streamlit Web UI:** Upload videos, choose custom YOLO weights, configure confidence parameters, and visualize real-time predictions in your browser.
+- **Ultralytics Solutions:** Integrated pipelines for Object Counting, Heatmaps, Speed Estimation, Object Cropper/Blurrer, and Queue Management.
+- **Multi-Format Exports:** Export trained models to ONNX, TorchScript, OpenVINO, CoreML, and more.
 
 ---
 
 ## 🛠️ Technology Stack
-* **Core Framework:** Python 3.10+ & PyTorch (CPU/CUDA)
-* **Computer Vision & Tracking:** OpenCV, NumPy, BoT-SORT, ByteTracker
-* **Web UI Dashboard:** Streamlit
-* **Testing & Quality Assurance:** pytest, pytest-cov, pytest-xdist
-* **Deployment & Formats:** ONNX, ONNX Slim, TorchScript
+
+- **Core Framework:** Python 3.10+ & PyTorch (CPU/CUDA)
+- **Computer Vision & Tracking:** OpenCV, NumPy, BoT-SORT, ByteTracker
+- **Web UI Dashboard:** Streamlit
+- **Testing & Quality Assurance:** pytest, pytest-cov, pytest-xdist
+- **Deployment & Formats:** ONNX, ONNX Slim, TorchScript
 
 ---
 
@@ -70,8 +72,8 @@ The following diagram illustrates how inputs (images, videos, cameras) flow thro
 3. **Data Ingestion:** Streamlit receives file uploads (e.g. video files) or connects to local webcams/directories.
 4. **Frame Processing Loop:** OpenCV decodes frames sequentially and feeds them into the YOLO pipeline.
 5. **Inference & Tracking:**
-   * Predictions are calculated.
-   * Active trackers (BoT-SORT / ByteTracker) assign persistent IDs.
+   - Predictions are calculated.
+   - Active trackers (BoT-SORT / ByteTracker) assign persistent IDs.
 6. **Solution Overlays:** Solutions like counting lines, zones, heatmaps, or blurring are applied to raw frames.
 7. **Rendering & Exporting:** Rendered frames are pushed back to the Streamlit UI frame container at runtime, and final predictions are compiled.
 
@@ -80,7 +82,9 @@ The following diagram illustrates how inputs (images, videos, cameras) flow thro
 ## ⚡ Setup & Run Instructions
 
 ### 1. Installation
+
 Clone the repository and install dependencies in editable mode:
+
 ```powershell
 # Navigate to project directory
 cd D:\Ultralytics\ultralytics-main
@@ -90,18 +94,25 @@ python -m pip install -e .[dev]
 ```
 
 ### 2. Run the Streamlit Local Web Server
+
 Launch the interactive web application:
+
 ```powershell
 yolo solutions inference
 ```
+
 Or run directly with Streamlit:
+
 ```powershell
 streamlit run ultralytics/solutions/streamlit_inference.py
 ```
+
 This starts the server on `http://localhost:8501`.
 
 ### 3. Run the Verification Tests
+
 To verify all CLI, engine, solutions, and exporter modules:
+
 ```powershell
 # Run complete engine tests
 python -m pytest tests/test_engine.py -v
@@ -116,4 +127,5 @@ python -m pytest tests/test_exports.py -k "test_export_torchscript or test_expor
 ---
 
 ## 👥 Authors & Contribution
+
 Developed and verified by **Sabari-D**. Under the AGPL-3.0 License.
